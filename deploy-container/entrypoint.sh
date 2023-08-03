@@ -24,6 +24,7 @@ else
     touch /home/coder/.config/rclone/rclone.conf
     echo $RCLONE_DATA | base64 -d > /home/coder/.config/rclone/rclone.conf
 
+
     # default to true
     RCLONE_VSCODE_TASKS="${RCLONE_VSCODE_TASKS:-true}"
     RCLONE_AUTO_PUSH="${RCLONE_AUTO_PUSH:-true}"
@@ -98,3 +99,4 @@ fi
 echo "[$PREFIX] Starting code-server..."
 # Now we can run code-server with the default entrypoint
 /usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 $START_DIR
+cat /home/coder/.config/code-server/config.yaml
