@@ -10,7 +10,7 @@ get_deployment() {
     image=$(helm get values $name-dev -o json | jq .image.repository)
     echo "$name (image: $image)"
     echo "http://$ip:$port"
-    echo $(kubectl get secret $name-dev-code-server -o jsonpath="{.data.password}" | base64 --decode)
+    echo $(kubectl get secret $name-dev-code-server -o jsonpath="123456" | base64 --decode)
     echo "---"
 }
 
